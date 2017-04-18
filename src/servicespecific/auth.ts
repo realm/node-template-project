@@ -23,3 +23,18 @@ export function putUser(username: string, password: string, isAdmin: boolean = f
         }
     })
 }
+
+export function removeUser(username: string) {
+  superagent
+    .delete(`${Context.getInstance().host}/controls/auth/users`)
+    .send({
+        username: username
+    })
+    .end((err, response) => {
+        if(err) { console.error(`Failed to remove`, err) }
+        else {
+            let user: any = response.body.user
+            console.log(`Successfully removed the user`, user)
+        }
+    })
+}

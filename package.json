@@ -25,6 +25,7 @@
     "co": "^4.6.0",
     "co-prompt": "^1.0.0",
     "commander": "^2.9.0",
+    "socket.io-client": "^1.7.3",
     "superagent": "^3.5.2"
   },
   "devDependencies": {
@@ -32,6 +33,7 @@
     "@types/commander": "^2.3.31",
     "@types/mocha": "^2.0.0",
     "@types/node": "^7.0.0",
+    "@types/socket.io-client": "^1.4.29",
     "@types/superagent": "^2.0.36",
     "chai": "^3.0.0",
     "coveralls": "^2.0.0",
