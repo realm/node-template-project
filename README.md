@@ -2,31 +2,29 @@
 [![Coverage Status](https://coveralls.io/repos/github/{{github-user-name}}/{{github-app-name}}/badge.svg?branch=master)](https://coveralls.io/github/{{github-user-name}}/{{github-app-name}}?branch=master)
 [![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
 
-# Using this module in other modules
+# Realm Cli
 
-Here is a quick example of how this module can be used in other modules. The [TypeScript Module Resolution Logic](https://www.typescriptlang.org/docs/handbook/module-resolution.html) makes it quite easy. The file `src/index.ts` is a [barrel](https://basarat.gitbooks.io/typescript/content/docs/tips/barrel.html) that re-exports selected exports from other files. The _package.json_ file contains `main` attribute that points to the generated `lib/index.js` file and `typings` attribute that points to the generated `lib/index.d.ts` file.
+* To install the cli, you will do `npm install -g realm-cli`
+* To aim the cli at a host you can do it either of 3 ways
+    1. `realm-cli -h "localhost:9080" ..args`
+    2. `realm-cli -host "localhost:9080"" ...args`
+    3. To set a host for future commands simply call `realm-cli use "localhost:9080"`
+    4. To clear a host `realm-cli use ""` or `realm-cli use`
 
-> If you are planning to have code in multiple files (which is quite natural for a NodeJS module) that users can import, make sure you update `src/index.ts` file appropriately.
+## Controlling a Service
+Services are hosted by a service host. Generally an express app that is running as a a simple http/websocket server. 
 
-Now assuming you have published this amazing module to _npm_ with the name `my-amazing-lib`, and installed it in the module in which you need it -
+All services must have a way to:
 
-- To use the `Greeter` class in a TypeScript file -
+1. start `realm-cli -host "localhost:9080"" -s "auth" start`
+2. stop  `realm-cli -host "localhost:9080"" -s "auth" stop`
+3. get status `realm-cli -host "localhost:9080"" -s "auth" status`
+4. observe status `realm-cli -host "localhost:9080"" -s "auth" -watch status`
+5. observe log `realm-cli -host "localhost:9080"" -s "auth" -watch log`
 
-```ts
-import { Greeter } from "my-amazing-lib";
-
-const greeter = new Greeter("World!");
-greeter.greet();
-```
-
-- To use the `Greeter` class in a JavaScript file -
-
-```js
-const Greeter = require('my-amazing-lib').Greeter;
-
-const greeter = new Greeter('World!');
-greeter.greet();
-```
+## Service Specific Commands
+You can pass a service name to use or disuse 
+`realm-cli -h "localhost:9080" -s "auth" -change-password -u "max.alexander@realm.io"  -p "ilovesushi"
 
 ## Setting travis and coveralls badges
 1. Sign in to [travis](https://travis-ci.org/) and activate the build for your project.
