@@ -1,6 +1,6 @@
 {
   "name": "realm-cli",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "realm-cli",
   "license": "MIT",
   "repository": "",
@@ -9,14 +9,13 @@
     ""
   ],
   "files": [
-    "lib"
+    "dist"
   ],
-  "main": "lib/index.js",
-  "typings": "lib/index.d.ts",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
   "scripts": {
-    "clean": "rimraf lib",
-    "lint": "tslint --force --format verbose \"src/**/*.ts\"",
-    "build": "npm run clean && npm run lint && echo Using TypeScript && tsc --version && tsc --pretty",
+    "clean": "rimraf dist",
+    "build": "npm run clean && echo Using TypeScript && tsc --version && tsc --pretty",
     "test": "npm run build && mocha --compilers ts:ts-node/register --recursive 'test/**/*-spec.ts'",
     "coverage": "nyc --reporter=text --reporter=html --reporter=lcov mocha --compilers ts:ts-node/register",
     "watch": "npm run build -- --watch",
@@ -49,7 +48,7 @@
       "src/*.ts"
     ],
     "exclude": [
-      "lib"
+      "dist"
     ],
     "extension": [
       ".ts"
