@@ -1,34 +1,18 @@
-import * as program from 'commander'
+export class Greeter {
+  sayHi(): string {
+    return 'hi';
+  }
 
-import use from './use'
-import reset from './reset'
+  sayNumber(): number {
+    return 3;
+  }
 
-var packageJSON = require('./package.json')
-var version = packageJSON.version as string
-var host: string = "localhost:9080"
+  saySomethingAsync(callback: ((val: string) => void)) {
+    setTimeout(() => {
+      callback('something')
+    }, 1000)
+  }
+}
 
-program
-    .version(version)
-    .command('use', 'sets and caches a realm object server endpoint. If the port is not included then port 9080 is used')
-    .option('-h, --host <hostnamewithport>', 'target a realm object server endpoint for this command', 'localhost:9080')
-    .option('-s, --service <servicename>', 'specifies a service name', /^(auth|func|realrest|all)$/i, 'all')
-    .action(use)
-    .parse(process.argv)
-
-program
-  .command('reset')
-  .action(reset)
-
-program
-  .command('reset')
-  .action(reset)
-
-program.on('--help', function(){
-  console.log('  Examples:');
-  console.log('');
-  console.log('    $ custom-help --help');
-  console.log('    $ custom-help -h');
-  console.log('');
-});
-
-program.parse(process.argv)
+const greeter = new Greeter()
+console.log(greeter.sayHi())

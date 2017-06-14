@@ -1,26 +1,22 @@
 {
+  // See http://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
   "version": "0.1.0",
-  "command": "npm",
+  "command": "${workspaceRoot}/node_modules/.bin/gulp",
   "isShellCommand": true,
-  "args": ["run"],
-  "showOutput": "always",
+  "args": [
+    "--no-color"
+  ],
   "tasks": [
     {
       "taskName": "build",
-      "isBuildCommand": true
-    },
-    {
-      "taskName": "clean"
-    },
-    {
-      "taskName": "lint"
-    },
-    {
-      "taskName": "coverage"
+      "isBuildCommand": true,
+      "showOutput": "always"
     },
     {
       "taskName": "test",
-      "isTestCommand": true
+      "isBuildCommand": true,
+      "showOutput": "always"
     }
   ]
 }

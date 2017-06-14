@@ -1,32 +1,45 @@
-[![Build Status](https://travis-ci.org/{{github-user-name}}/{{github-app-name}}.svg?branch=master)](https://travis-ci.org/{{github-user-name}}/{{github-app-name}}.svg?branch=master)
-[![Coverage Status](https://coveralls.io/repos/github/{{github-user-name}}/{{github-app-name}}/badge.svg?branch=master)](https://coveralls.io/github/{{github-user-name}}/{{github-app-name}}?branch=master)
-[![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
+# Node Template Project - With TypeScript!
 
-# Realm Cli
+At Realm we love TypeScript! We've seen great success in working across multiple remote teams with it and want to share our base template when creating projects. 
 
-* To install the cli, you will do `npm install -g realm-cli`
-* To aim the cli at a host you can do it either of 3 ways
-    1. `realm-cli -h "localhost:9080" ..args`
-    2. `realm-cli -host "localhost:9080"" ...args`
-    3. To set a host for future commands simply call `realm-cli use "localhost:9080"`
-    4. To clear a host `realm-cli use ""` or `realm-cli use`
+* Has TypeScript
+* Has TypeScript Lint (aka. tslint)
+* Has Visual Studio Code Debugging!
+* Has Testing with Mocha + Chai
+* Has Gitignore
 
-## Controlling a Service
-Services are hosted by a service host. Generally an express app that is running as a a simple http/websocket server. 
+# Get this Template!
 
-All services must have a way to:
+This is a great starting point for using Node.JS, TypeScript, and Visual Studio Code. All artifacts get created in the `dist` folder. All the sourcecode is in `src`
 
-1. start `realm-cli -host "localhost:9080"" -s "auth" start`
-2. stop  `realm-cli -host "localhost:9080"" -s "auth" stop`
-3. get status `realm-cli -host "localhost:9080"" -s "auth" status`
-4. observe status `realm-cli -host "localhost:9080"" -s "auth" -watch status`
-5. observe log `realm-cli -host "localhost:9080"" -s "auth" -watch log`
+Just clone this repo and point to your new origin!
 
-## Service Specific Commands
-You can pass a service name to use or disuse 
-`realm-cli -h "localhost:9080" -s "auth" -change-password -u "max.alexander@realm.io"  -p "ilovesushi"
+1. Run `git clone https://github.com/realm/node-template-project.git --depth 1`
+2. Run `git remote set-url origin https://github.com/USERNAME/REPOSITORY.git`
+3. Cd into the directory and run `npm install`
 
-## Setting travis and coveralls badges
-1. Sign in to [travis](https://travis-ci.org/) and activate the build for your project.
-2. Sign in to [coveralls](https://coveralls.io/) and activate the build for your project.
-3. Replace {{github-user-name}}/{{github-app-name}} with your repo details like: "ospatil/generator-node-typescript".
+# Commands for Building, Cleaning, Testing, and Linting
+
+After `npm install`
+
+1. To Build `npm run build`
+2. To Clean Artifacts `npm run clean`
+3. To Test `npm run test`
+4. To Lint `npm run lint`
+
+# Debugging with Visual Studio Code
+
+1. Set a breakpoint in your code ending in `.ts` or your test ending in `.spec.ts`
+2. Run Either `Launch Program` or `Launch Tests` in the debug pane. 
+
+# Some Advice
+
+Never use arrow functions on the `Mocha` test handlers. Why? The callback has its own set of methods. The arrow function does not have an easy way to reference `this`
+
+Say you want to increase the timeout of the function callback in your tests
+
+```javascript
+it('should do something', () => {
+    this.timeout(2000) // this is not the callback function!
+})
+```

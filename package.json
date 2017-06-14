@@ -14,12 +14,11 @@
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "scripts": {
-    "clean": "rimraf dist",
-    "build": "npm run clean && echo Using TypeScript && tsc --version && tsc --pretty",
-    "test": "npm run build && mocha --compilers ts:ts-node/register --recursive 'test/**/*-spec.ts'",
-    "coverage": "nyc --reporter=text --reporter=html --reporter=lcov mocha --compilers ts:ts-node/register",
-    "watch": "npm run build -- --watch",
-    "watch:test": "npm run test -- --watch"
+    "test": "npm run build && ./node_modules/.bin/gulp --gulpfile gulpfile.js test",
+    "build": "./node_modules/.bin/gulp --gulpfile gulpfile.js build",
+    "watch": "./node_modules/.bin/gulp --gulpfile gulpfile.js watch",
+    "clean": "./node_modules/.bin/gulp --gulpfile gulpfile.js clean",
+    "lint": "./node_modules/.bin/tslint -c tslint.json 'src/**/*.ts'"
   },
   "dependencies": {
     "co": "^4.6.0",
@@ -29,38 +28,26 @@
     "superagent": "^3.5.2"
   },
   "devDependencies": {
-    "@types/chai": "^3.0.0",
-    "@types/commander": "^2.3.31",
-    "@types/mocha": "^2.0.0",
-    "@types/node": "^7.0.0",
+    "@types/chai": "^4.0.0",
+    "@types/commander": "^2.9.1",
+    "@types/mocha": "^2.2.41",
+    "@types/node": "^7.0.31",
     "@types/socket.io-client": "^1.4.29",
-    "@types/superagent": "^2.0.36",
-    "chai": "^3.0.0",
-    "coveralls": "^2.0.0",
+    "@types/superagent": "^2.0.37",
+    "chai": "^4.0.2",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-mocha": "^4.3.1",
+    "gulp-sourcemaps": "^2.6.0",
+    "gulp-tslint": "^8.1.1",
+    "gulp-typescript": "^3.1.7",
+    "gulp-util": "^3.0.8",
     "mocha": "^3.0.0",
-    "nyc": "^10.0.0",
-    "rimraf": "^2.0.0",
-    "ts-node": "^3.0.0",
-    "tslint": "^5.0.0",
-    "typescript": "^2.0.0"
+    "ts-node": "^3.0.6",
+    "tslint": "^5.4.3",
+    "typescript": "^2.3.4"
   },
   "engines": {
-    "node": ">=4.0.0"
-  },
-  "nyc": {
-    "include": [
-      "src/*.ts"
-    ],
-    "exclude": [
-      "dist"
-    ],
-    "extension": [
-      ".ts"
-    ],
-    "require": [
-      "ts-node/register"
-    ],
-    "reporter": [],
-    "all": true
+    "node": ">=6.0.0"
   }
 }

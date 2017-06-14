@@ -1,23 +1,15 @@
 {
   "compilerOptions": {
-    "declaration": true,
+    "target": "es5",
     "module": "commonjs",
     "moduleResolution": "node",
-    "target": "es5",
-    "noImplicitAny": true,
-    "outDir": "./dist",
-    "preserveConstEnums": true,
+    "noImplicitAny": false,
     "removeComments": true,
+    "preserveConstEnums": true,
     "sourceMap": true,
-    "typeRoots": [
-      "./node_modules/@types"
-    ]
+    "forceConsistentCasingInFileNames": true
   },
-  "include": [
-    "src/**/*"
-  ],
   "exclude": [
-    "node_modules",
-    "**/*-spec.ts"
+    "node_modules"
   ]
 }

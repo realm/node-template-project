@@ -5,18 +5,40 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Launch Tests",
             "type": "node",
             "request": "launch",
+            "program": "${workspaceRoot}/node_modules/mocha/bin/_mocha",
+            "stopOnEntry": false,
+            "args": [
+                "--grep",
+                ".*",
+                "dist/**/*.js"
+            ],
+            "cwd": "${workspaceRoot}",
+            "sourceMaps": true,
+            "outFiles": [
+                "${workspaceRoot}/dist/**/*.js"
+            ],
+            "preLaunchTask": "build"
+        },
+        {
             "name": "Launch Program",
-            "program": "${workspaceRoot}/src/index.ts",
-            "preLaunchTask": "build",
-            "outFiles": []
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceRoot}/dist/index.js",
+            "stopOnEntry": false,
+            "cwd": "${workspaceRoot}",
+            "sourceMaps": true,
+            "outFiles": [
+                "${workspaceRoot}/dist/**/*.js"
+            ],
+            "preLaunchTask": "build"
         },
         {
             "type": "node",
             "request": "attach",
-            "name": "Attach to Port",
-            "address": "localhost",
+            "name": "Attach to Process",
             "port": 5858,
             "outFiles": []
         }
