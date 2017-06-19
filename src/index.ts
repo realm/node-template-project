@@ -12,6 +12,10 @@ export class Greeter {
       callback('something')
     }, 1000)
   }
+
+  forceACrash() {
+    throw new Error('Some kind of custom crash message')
+  }
 }
 
 const greeter = new Greeter()

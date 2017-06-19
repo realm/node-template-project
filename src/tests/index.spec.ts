@@ -28,4 +28,10 @@ describe('Greeter Tests', function () {
             done()
         })
     })
+
+    it('should say an exception message', function() {
+        expect(() => {
+            greeter.forceACrash()
+        }).to.throw('Some kind of custom crash message')
+    })
 });
