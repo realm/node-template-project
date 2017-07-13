@@ -1,7 +1,7 @@
 {
-  "name": "realm-cli",
+  "name": "node-template-project",
   "version": "0.0.1",
-  "description": "realm-cli",
+  "description": "node-template-project",
   "license": "MIT",
   "repository": "",
   "author": "",
@@ -23,21 +23,21 @@
   "dependencies": {
   },
   "devDependencies": {
-    "@types/chai": "^4.0.0",
+    "@types/chai": "^4.0.1",
     "@types/mocha": "^2.2.41",
-    "@types/node": "^7.0.31",
-    "chai": "^4.0.2",
+    "@types/node": "^8.0.11",
+    "chai": "^4.1.0",
     "del": "^3.0.0",
     "gulp": "^3.9.1",
     "gulp-mocha": "^4.3.1",
     "gulp-sourcemaps": "^2.6.0",
     "gulp-tslint": "^8.1.1",
-    "gulp-typescript": "^3.1.7",
+    "gulp-typescript": "^3.2.0",
     "gulp-util": "^3.0.8",
-    "mocha": "^3.0.0",
-    "ts-node": "^3.0.6",
-    "tslint": "^5.4.3",
-    "typescript": "^2.3.4"
+    "mocha": "^3.4.2",
+    "ts-node": "^3.2.0",
+    "tslint": "^5.5.0",
+    "typescript": "^2.4.1"
   },
   "engines": {
     "node": ">=6.0.0"
