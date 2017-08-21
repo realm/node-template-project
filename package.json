@@ -14,10 +14,6 @@
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "scripts": {
-    "test": "npm run build && ./node_modules/.bin/gulp --gulpfile gulpfile.js test",
-    "build": "./node_modules/.bin/gulp --gulpfile gulpfile.js build",
-    "watch": "./node_modules/.bin/gulp --gulpfile gulpfile.js watch",
-    "clean": "./node_modules/.bin/gulp --gulpfile gulpfile.js clean",
     "lint": "./node_modules/.bin/tslint -c tslint.json 'src/**/*.ts'"
   },
   "dependencies": {
@@ -27,13 +23,6 @@
     "@types/mocha": "^2.2.41",
     "@types/node": "^8.0.11",
     "chai": "^4.1.0",
-    "del": "^3.0.0",
-    "gulp": "^3.9.1",
-    "gulp-mocha": "^4.3.1",
-    "gulp-sourcemaps": "^2.6.0",
-    "gulp-tslint": "^8.1.1",
-    "gulp-typescript": "^3.2.0",
-    "gulp-util": "^3.0.8",
     "mocha": "^3.4.2",
     "ts-node": "^3.2.0",
     "tslint": "^5.5.0",
