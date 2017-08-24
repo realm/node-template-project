@@ -15,7 +15,7 @@
   "typings": "dist/index.d.ts",
   "scripts": {
     "test": "mocha --opts src/tests/mocha.opts",
-    "build": "rm -rf dist; tsc",
+    "build": "npm run clean && tsc",
     "watch": "tsc --watch",
     "clean": "rm -rf dist",
     "lint": "tslint -c tslint.json 'src/**/*.ts'",
