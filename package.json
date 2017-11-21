@@ -14,24 +14,25 @@
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "scripts": {
-    "test": "mocha --opts src/tests/mocha.opts",
     "build": "npm run clean && tsc",
     "watch": "tsc --watch",
+    "test": "mocha --opts tests/mocha.opts",
+    "test-watch": "mocha --opts tests/mocha.opts --watch",
     "clean": "rm -rf dist",
     "lint": "tslint -c tslint.json 'src/**/*.ts'",
     "lint-fix": "tslint -c tslint.json 'src/**/*.ts' --fix"
   },
   "devDependencies": {
-    "@types/chai": "^4.0.1",
-    "@types/mocha": "^2.2.41",
-    "@types/node": "^8.0.11",
-    "chai": "^4.1.0",
-    "mocha": "^3.4.2",
+    "@types/chai": "^4.0.4",
+    "@types/mocha": "^2.2.42",
+    "@types/node": "^8.0.25",
+    "chai": "^4.1.1",
+    "mocha": "^3.5.0",
     "ts-node": "^3.3.0",
-    "tslint": "^5.5.0",
+    "tslint": "^5.6.0",
     "typescript": "^2.5.1"
   },
   "engines": {
-    "node": ">=6.0.0"
+    "node": ">=6.10"
   }
 }

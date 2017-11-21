@@ -1,7 +1,7 @@
 import * as mocha from 'mocha'
 import { expect } from 'chai'
 
-import { Greeter } from '../'
+import { Greeter } from '../src'
 
 describe('Greeter Tests', function () {
 
@@ -27,6 +27,12 @@ describe('Greeter Tests', function () {
             expect(val).to.eq('something')
             done()
         })
+    })
+
+    it('should say something with a timeout but with a promise now', async function(){
+        this.timeout(5000)
+        const message = await greeter.saySomethingPromised()
+        expect(message).to.eq('I am wrapped in promise!')
     })
 
     it('should say an exception message', function() {

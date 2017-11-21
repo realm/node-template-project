@@ -13,6 +13,10 @@ export class Greeter {
     }, 1000)
   }
 
+  async saySomethingPromised(): Promise<string> {
+    return "I am wrapped in promise!"
+  }
+
   forceACrash() {
     throw new Error('Some kind of custom crash message')
   }

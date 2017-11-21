@@ -18,7 +18,7 @@ Just clone this repo and point to your new origin!
 2. Run `git remote set-url origin https://github.com/USERNAME/REPOSITORY.git`
 3. Cd into the directory and run `npm install`
 
-# Commands for Building, Cleaning, Testing, and Linting
+# Commands for Building, Cleaning, Testing, Linting and Watching
 
 After `npm install`
 
@@ -26,11 +26,13 @@ After `npm install`
 2. To Clean Artifacts `npm run clean`
 3. To Test `npm run test`
 4. To Lint `npm run lint`
+5. To Buld and Watch when you make changes `npm run watch`
 
 # Debugging with Visual Studio Code
 
 1. Set a breakpoint in your code ending in `.ts` or your test ending in `.spec.ts`
 2. Run Either `Launch Program` or `Launch Tests` in the debug pane. 
+3. Run Either `Launch Program` or `Launch Tests` in the debug pane. 
 
 # Some Advice
 
