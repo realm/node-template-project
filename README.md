@@ -16,7 +16,7 @@ Just clone this repo and point to your new origin!
 
 1. Run `git clone https://github.com/realm/node-template-project.git --depth 1`
 2. Run `git remote set-url origin https://github.com/USERNAME/REPOSITORY.git`
-3. Cd into the directory and run `npm install`
+3. Cd into the directory and run `npm install` (or if you have `yarn`)
 
 # Commands for Building, Cleaning, Testing, Linting and Watching
 
@@ -31,8 +31,7 @@ After `npm install`
 # Debugging with Visual Studio Code
 
 1. Set a breakpoint in your code ending in `.ts` or your test ending in `.spec.ts`
-2. Run Either `Launch Program` or `Launch Tests` in the debug pane. 
-3. Run Either `Launch Program` or `Launch Tests` in the debug pane. 
+2. Run Either `src/index.ts` or `All Tests` in the debug pane. 
 
 # Some Advice
 
