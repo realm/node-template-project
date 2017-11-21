@@ -5,51 +5,48 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Debug All Tests",
+            "name": "All Tests",
             "type": "node",
             "request": "launch",
             "program": "${workspaceRoot}/node_modules/mocha/bin/_mocha",
             "stopOnEntry": false,
             "args": [
-                "--opts", "./src/tests/mocha.opts"
+                "--opts", "./tests/mocha.opts"
             ],
             "cwd": "${workspaceRoot}",
-            "protocol": "inspector",
-            "preLaunchTask": "build"
+            "protocol": "inspector"
         },
         {
-            "name": "Debug Current Test File",
+            "name": "Current Test File",
             "type": "node",
             "request": "launch",
             "program": "${workspaceRoot}/node_modules/mocha/bin/_mocha",
             "stopOnEntry": false,
             "args": [
-                "--opts", "./src/tests/mocha.opts",
+                "--opts", "./tests/mocha.opts",
                 "${relativeFile}"
             ],
             "cwd": "${workspaceRoot}",
-            "protocol": "inspector",
-            "preLaunchTask": "build"
+            "protocol": "inspector"
         },
         {
-            "name": "Debug Current TypeScript File",
+            "name": "Current TS File",
             "type": "node",
             "request": "launch",
-            "program": "${workspaceRoot}/node_modules/ts-node/dist/_bin.js",
             "args": ["${relativeFile}"],
+            "runtimeArgs": ["-r", "ts-node/register"],
             "cwd": "${workspaceRoot}",
             "protocol": "inspector",
-            "preLaunchTask": "build"            
+            "internalConsoleOptions": "openOnSessionStart"
         },
         {
-            "name": "Debug Program",
+            "name": "src/index.ts",
             "type": "node",
             "request": "launch",
             "program": "${workspaceRoot}/node_modules/ts-node/dist/_bin.js",
             "args": ["./src/index.ts"],
             "cwd": "${workspaceRoot}",
-            "protocol": "inspector",
-            "preLaunchTask": "build"
+            "protocol": "inspector"
         },
         {
             "type": "node",
